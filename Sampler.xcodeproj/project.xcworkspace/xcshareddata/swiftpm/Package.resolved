@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "SwiftyFlux",
+        "repositoryURL": "https://github.com/jxpress/SwiftyFlux",
+        "state": {
+          "branch": "master",
+          "revision": "5640f12bbf77214dd94fbd60b44d24181db2d41b",
+          "version": null
+        }
+      }
+    ]
+  },
+  "version": 1
+}
