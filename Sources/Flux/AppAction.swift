@@ -10,5 +10,6 @@ import Foundation
 import SwiftyFlux
 
 enum AppAction: Action {
+    case fetchSample
     case selectSample(Sample)
 }

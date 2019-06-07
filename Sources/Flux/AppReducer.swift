@@ -15,6 +15,10 @@ struct AppReducer: Reducer {
     func reduce(state: SampleState, action: Action) -> SampleState {
         var state = state
         switch action {
+        case AppAction.fetchSample:
+            state.samples = (0 ... 100).map {
+                Sample(name: "sample \($0)")
+            }
         case AppAction.selectSample(let sample):
             state.samples.append(sample)
         default:

@@ -12,25 +12,26 @@ struct RootView : View {
 
     @EnvironmentObject var state: AppState
 
-    @State var routing: String
+    @State var route: String
 
     var body: some View {
-        List {
-            Button(action: selectSample) {
-                Text("Sample")
-            }
-        }
+        routing(with: route).showUp(state)
     }
 
-    func selectSample() {
-        self.state.dispatch(action: AppAction.selectSample(.init(name: "sample")))
+    func routing(with route: String) -> some Screen & View {
+        switch route {
+        case "/":
+            return SampleListScreen()
+        default:
+            fatalError()
+        }
     }
 }
 
 #if DEBUG
 struct RootView_Previews : PreviewProvider {
     static var previews: some View {
-        RootView(routing: "/")
+        RootView(route: "/")
             .environmentObject(AppState())
     }
 }

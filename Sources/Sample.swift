@@ -7,9 +7,17 @@
 //
 
 import Foundation
+import SwiftUI
 
-struct Sample {
+struct Sample : Identifiable {
+    
+    typealias ID = String
+    var id: String {
+        return name
+    }
+    
     var name: String
+    
     init(name: String) {
         self.name = name
     }
